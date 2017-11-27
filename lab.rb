@@ -60,6 +60,49 @@ class SportsTeam
 
 end
 
+# class Book
+#   def initialize(title, rental details, student)
+#     @title = title
+#     @rental_details =
+#     title: "lord_of_the_rings",
+#     rental_details: {
+#      student_name: "Jeff",
+#      date: "01/12/16"
+# end
+
+class Library
+
+attr_reader :list_of_books
+
+  def initialize(list_of_books)
+    @list_of_books = list_of_books
+  end
+
+  def find_book_by_name(book_name)
+    for book in @list_of_books
+      return book if book[:title] == book_name
+    end
+  end
+
+  def rental_details_book_name(book_name)
+    book  = find_book_by_name(book_name)
+    return book[:rental_details]
+  end
+
+def add_new_book(book_name)
+  new_book = { title:  book_name  , rental_details: { student_name: "" , date: ""}}
+  @list_of_books << new_book
+end
+
+def  alter_rental_details(book_name, student_name, return_date)
+  rental_details = rental_details_book_name(book_name)
+  rental_details = {student_name: student_name, date: return_date}
+  
+end
+
+
+
+end
 
 
 
